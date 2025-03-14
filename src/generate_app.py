@@ -4,7 +4,7 @@ import json
 
 # OpenRouter API kulcs (helyettesítsd a sajátoddal)
 API_KEY = os.getenv("OPENROUTER_API_KEY")
-if not api_key:
+if not API_KEY:
     raise ValueError("API key not found")
 
 # OpenRouter DeepSeek Coder endpoint
