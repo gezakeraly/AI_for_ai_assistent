@@ -1,8 +1,11 @@
+import os
 import requests
 import json
 
 # OpenRouter API kulcs (helyettesítsd a sajátoddal)
-API_KEY = "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"
+API_KEY = os.getenv("OPENROUTER_API_KEY")
+if not api_key:
+    raise ValueError("API key not found")
 
 # OpenRouter DeepSeek Coder endpoint
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -41,9 +44,9 @@ if response.status_code == 200:
     generated_code = result["choices"][0]["message"]["content"]
     
     # A generált kód mentése egy fájlba
-    with open("todo_app.jsx", "w") as f:
+    with open("todo_app.txt", "w") as f:
         f.write(generated_code)
 
-    print("✅ React Todo alkalmazás generálva: todo_app.jsx")
+    print("✅ React Todo alkalmazás generálva: todo_app.txt")
 else:
     print("❌ Hiba történt:", response.text)
