@@ -8,7 +8,7 @@ if not os.path.exists("generated_code"):
     os.makedirs("generated_code")
 
 # OpenRouter API kulcs (helyettesítsd a sajátoddal)
-API_KEY = "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"
+API_KEY = "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"
 
 # OpenRouter DeepSeek Coder endpoint
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -95,10 +95,10 @@ data = {
 
 # API hívás
 try:
-    import logging
-    logging.basicConfig(level=logging.INFO)
+    #import logging
+    #logging.basicConfig(level=logging.INFO)
 
-    logging.info("\n --Promptseparator-- \n".join([x["content"] for x in data["messages"]]))
+    #logging.info("\n --Promptseparator-- \n".join([x["content"] for x in data["messages"]]))
     response = requests.post(API_URL, headers=headers, json=data, timeout=10)
 
     # Válasz feldolgozása
@@ -124,8 +124,8 @@ try:
                             file_extension = component.get("file_extension", ".txt")  # Alapértelmezett kiterjesztés, ha nincs megadva
                             full_filename = f"{filename}"
                             print(f"📄 Filename: {full_filename}")
-                            print("🟢 Code:")
-                            print(code)
+                            #print("🟢 Code:")
+                            #print(code)
 
                             # Kód mentése fájlba
                             os.makedirs("generated_code", exist_ok=True)
