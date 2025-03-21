@@ -4,8 +4,11 @@ import os
 import requests
 import json
 
+if not os.path.exists("generated_code"):
+    os.makedirs("generated_code")
+
 # OpenRouter API kulcs (helyettesítsd a sajátoddal)
-API_KEY = "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"
+API_KEY = "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"
 
 # OpenRouter DeepSeek Coder endpoint
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
