@@ -8,7 +8,7 @@ if not os.path.exists("generated_code"):
     os.makedirs("generated_code")
 
 # OpenRouter API kulcs (helyettesítsd a sajátoddal)
-API_KEY = "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"
+API_KEY = os.getenv("AI_API_KEY")
 
 # OpenRouter DeepSeek Coder endpoint
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
